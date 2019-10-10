@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StartWizardActivity">
+
+
+    <com.voyager.fitquote.common.NoSlideViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager" />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line_view"
+        android:alpha=".5"
+        android:layout_below="@id/layout_bottom_bar"
+        android:background="@color/primaryDarkColor" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_bottom_bar"
+        android:background="@color/primaryLightColor"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        >
+        <LinearLayout
+            android:id="@+id/layoutDots"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dots_height"
+            android:layout_marginBottom="@dimen/dots_margin_bottom"
+            android:gravity="center"
+            android:orientation="horizontal"></LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_back"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/primaryTextColor"
+            app:icon="@drawable/ic_chevron_left_black_24dp"
+            app:iconTint="@color/primaryTextColor"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:visibility="gone"
+            android:text="Back" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_next"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/primaryTextColor"
+            app:icon="@drawable/ic_chevron_right_black_24dp"
+            app:iconTint="@color/primaryTextColor"
+            app:iconGravity="textEnd"
+            app:iconPadding="0dp"
+            android:text="Next" />
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

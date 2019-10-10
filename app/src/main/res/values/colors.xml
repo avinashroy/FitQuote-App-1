@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="windowBackground">#f3f3f3</color>
+    <color name="secondaryBackground">#FFFFFF</color>
+    <color name="colorAccentSecondary">#2f2727</color>
+    <color name="lightGray">#d7d8d6</color>
+    <color name="darkGrey">#929292</color>
+    <color name="red">#db0011</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#2c5394</color>
+
+
+    <!-- new colors -->
+    <color name="primaryColor">#425665</color>
+    <color name="primaryLightColor">#485d6c</color>
+    <color name="primaryDarkColor">#3e505d</color>
+    <color name="secondaryColor">#DB0011</color>
+    <color name="secondaryLightColor">#FF0015</color>
+    <color name="secondaryDarkColor">#C10010</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#ffffff</color>
+
+
+    <color name="ptbg_color_1">#637483</color>
+    <color name="ptbg_color_2">#566775</color>
+    <color name="ptbg_color_3">#485d6c</color>
+    <color name="ptbg_color_4">#425665</color>
+    <color name="ptbg_color_5">#3e505d</color>
+    <color name="hsbc_red">#DB0011</color>
+    <color name="graphite15">#5C5C5C</color>
+</resources>

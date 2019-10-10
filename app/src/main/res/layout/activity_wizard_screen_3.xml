@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wizard_screen_3_header"
+        android:background="@color/black"
+        android:textSize="@dimen/header_font_size"
+        android:textColor="@color/white"
+        android:gravity="fill_vertical"
+        android:padding="@dimen/cell_padding"
+        android:layout_marginBottom="@dimen/cell_padding"
+        />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:padding="0dp">
+
+        <TableRow
+            style="@style/priceTableRowTop"
+            android:background="@color/red">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/midTableHeader"
+                android:text="@string/ws3_heading"
+                android:layout_weight="1"
+                android:layout_span="2"
+                />
+        </TableRow>
+
+        <TableRow
+            style="@style/priceTableRow">
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="Breakdown" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                >
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_font_size"
+                    android:text="Yearly" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_font_size"
+                    android:text="Monthly" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="My Details" />
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="HKD 299.00" />
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/midTableHeader"
+                android:background="@color/red"
+                android:layout_weight="1"
+                android:layout_span="2"
+                android:text="Discounts" />
+
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="Promo Code" />
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="HKD 0.00" />
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="Fit Report" />
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="HKD 0.00" />
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow"
+            android:background="@color/colorPrimary">
+            <TextView
+                style="@style/midTableHeader"
+                android:layout_weight="1"
+                android:text="Total" />
+
+            <TextView
+                style="@style/midTableHeader"
+                android:layout_weight="1"
+                android:text="HKD 299.00" />
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="30dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ws3_redeem_btn"
+                    style="@style/bigButton"
+                    android:text="Redeem Promo Code"
+                    android:drawableLeft="@drawable/gift_32"
+                    android:background="@color/red" />
+        </TableRow>
+        <TableRow>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/google_fit_btn"
+                style="@style/bigButton"
+                android:text="Link Google Fit"
+                android:drawableLeft="@drawable/google_fit"
+                android:background="@color/blue" />
+        </TableRow>
+    </TableLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
