@@ -2,6 +2,8 @@ package com.voyager.fitquote;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Build;
@@ -15,6 +17,9 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.voyager.fitquote.steps.Step1Fragment;
+import com.voyager.fitquote.steps.Step2Fragment;
+import com.voyager.fitquote.steps.Step3Fragment;
 import com.voyager.fitquote.steps.StepPageAdapter;
 
 public class StartWizardActivity extends AppCompatActivity {
@@ -53,7 +58,12 @@ public class StartWizardActivity extends AppCompatActivity {
         addBottomDots(0);
         updatePageElements();
 
-        stepPageAdapter = new StepPageAdapter(this, layouts);
+//        stepPageAdapter = new StepPageAdapter(getFragmentManager(), layouts);
+        stepPageAdapter = new StepPageAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        stepPageAdapter.addFrag(new Step1Fragment(), "Step1Fragment");
+        stepPageAdapter.addFrag(new Step2Fragment(), "Step2Fragment");
+        stepPageAdapter.addFrag(new Step3Fragment(), "Step3Fragment");
+
         viewPager.setAdapter(stepPageAdapter);
 
         btnNext.setOnClickListener(new View.OnClickListener() {

@@ -32,7 +32,6 @@ public class Step1Fragment extends Fragment implements Step {
         view = inflater.inflate(R.layout.activity_wizard_screen_1, container, false);
 
         //coverOptionSpinner = (MaterialSpinner) view.findViewById(R.id.cover_option_spnr);
-        coverOptionSpinner.setItems(getResources().getStringArray(R.array.cover_options));
         /*coverOptionSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
@@ -57,7 +56,7 @@ public class Step1Fragment extends Fragment implements Step {
             Step1AsyncTask startApplicationTask = new Step1AsyncTask();
             try {
                 String applicationNo = startApplicationTask.execute(this).get();
-            Snackbar.make(view, applicationNo, Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, applicationNo, Snackbar.LENGTH_LONG).show();
                 Log.d("s1", applicationNo);
             } catch (ExecutionException e) {
                 e.printStackTrace();

@@ -23,13 +23,6 @@
         android:layout_margin="20dp"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ws1_option"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16dp" />
-
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Age in Years(15 - 80)"
+                android:hint="Age in years"
                 android:inputType="number"
                 android:maxLines="1"
                 android:maxLength="2"

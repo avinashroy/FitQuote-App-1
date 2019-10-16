@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
@@ -45,7 +46,7 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
     final String TAG = "Step3Fragment";
     final int GOOGLE_FIT_PERMISSIONS_REQUEST_CODE = System.identityHashCode(this) & 0xFFFF;
     View view;
-    AppCompatButton googleFitBtn;
+    MaterialButton googleFitBtn;
 
 
     private int totalSteps = 0;
@@ -55,13 +56,8 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
         view = inflater.inflate(R.layout.activity_wizard_screen_3, container, false);
         //initialize your UI
 
-        googleFitBtn = (AppCompatButton) view.findViewById(R.id.google_fit_btn);
-        googleFitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Google fit button clicked", Snackbar.LENGTH_LONG).show();
-            }
-        });
+        googleFitBtn = (MaterialButton) view.findViewById(R.id.google_fit_btn);
+        googleFitBtn.setOnClickListener(this);
 
         return view;
     }

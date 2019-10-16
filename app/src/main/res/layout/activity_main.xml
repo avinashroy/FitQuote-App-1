@@ -1,153 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayoutCompat11"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondaryBackground"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:background="@color/secondaryBackground"
+    >
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appCompatImageView4"
-        android:layout_width="407dp"
-        android:layout_height="308dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="407dp"
-        android:src="@drawable/home_screen_banner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:layout_gravity="top"
+        android:src="@drawable/home_screen_banner"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat12"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="255dp"
-        android:layout_marginBottom="385dp"
-        android:background="@color/secondaryBackground"
         android:orientation="horizontal"
-        android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@color/secondaryBackground"
+        android:padding="20dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tick_box_26" />
-
+            android:src="@drawable/tick_box_26"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            />
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bene_1"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat13"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="270dp"
-        android:background="@color/secondaryBackground"
         android:orientation="horizontal"
-        android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@color/secondaryBackground"
+        android:padding="20dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tick_box_26" />
-
+            android:src="@drawable/tick_box_26"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            />
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bene_2"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat14"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="368dp"
-        android:layout_marginBottom="179dp"
-        android:background="@color/secondaryBackground"
         android:orientation="horizontal"
-        android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@color/secondaryBackground"
+        android:padding="20dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tick_box_26" />
-
+            android:src="@drawable/tick_box_26"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            />
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bene_3"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat15"
-        android:layout_width="363dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="486dp"
-        android:layout_marginBottom="175dp"
-        android:background="@color/secondaryBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@color/secondaryBackground"
+        android:padding="20dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tick_box_26" />
-
+            android:src="@drawable/tick_box_26"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            />
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bene_4"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/get_quote_btn"
         style="@style/FitQuote.Button.Icon"
-        android:layout_width="225dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="530dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="55dp"
-        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Get Quote"
         android:textSize="20dp"
+        android:layout_gravity="center"
         app:icon="@drawable/ic_assignment_turned_in_black_24dp"
-        app:iconGravity="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:iconGravity="textStart" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

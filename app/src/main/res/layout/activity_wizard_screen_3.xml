@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <!--<androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                 android:layout_weight="1"
                 android:text="HKD 299.00" />
         </TableRow>
-        <TableRow
+        <TableRow>
             android:layout_marginTop="30dp">
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/ws3_redeem_btn"
@@ -143,12 +143,15 @@
                     android:background="@color/red" />
         </TableRow>
         <TableRow>
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/google_fit_btn"
                 style="@style/bigButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Link Google Fit"
-                android:drawableLeft="@drawable/google_fit"
-                android:background="@color/blue" />
+                app:icon="@drawable/google_fit"
+                android:backgroundTint="@color/blue" />
+
         </TableRow>
     </TableLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -112,6 +112,10 @@
 
     <style name="FitQuote.Button.Icon" parent="Widget.MaterialComponents.Button.Icon">
         <item name="backgroundTint">@color/secondaryColor</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">30dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
     </style>
 
     <style name="FitQuotePagerHeader">

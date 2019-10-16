@@ -25,17 +25,10 @@
         android:layout_margin="20dp"
         android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/plan_option"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16dp" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checkedButton="@+id/first"
+        android:checkedButton="@+id/rb_plan_options_1"
         android:orientation="vertical">
 
         <RadioButton
