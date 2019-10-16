@@ -1,16 +1,27 @@
 <resources>
     <string name="app_name">First Care - HK</string>
-
+    <string name="bene_0">FirstCare Plus Medical Insurance</string>
     <string name="bene_1">Annual medical benefit of up to HKD5 million with no sub-limits</string>
     <string name="bene_2">Comprehensive coverage including cancer treatment and renal dialysis treatment</string>
     <string name="bene_3">Premiums won\'t go up^ because of the claims you make</string>
     <string name="bene_4">Guaranteed lifetime renewal</string>
+    <string name="bene_5">Welcome to HSBC Family</string>
 
-    <string name="wizard_screen_1_header">1. Who\'s covered ?</string>
-    <string name="wizard_screen_2_header">2. Which Plan ?</string>
-    <string name="wizard_screen_3_header">3. Your Quote</string>
+    <string name="wizard_screen_1_header">1. Who\'s covered ? </string>
+    <string name="wizard_screen_2_header">2. Which Plan ? </string>
+    <string name="wizard_screen_3_header">3. Your Quote </string>
 
-    <string name="ws1_option">I want to cover</string>
+    <string name="ws1_option">I want to cover ... </string>
+    <string name="ws1_heading">Your FirstCare Plus insurance quote is</string>
+    <string-array name="plan_options">
+        <item>Basic Plan ( HKD 206.00 )</item>
+        <item>Saver Plan ( HKD 296.00 )</item>
+        <item>Standard Plan ( HKD 394.00 )</item>
+        <item>Enhanced Plan ( HKD 668.00 )</item>
+        <item>Top Plan ( HKD 1,312.00 )</item>
+    </string-array>
+
+    <string name="plan_option">Plan options</string>
     <string name="ws3_heading">Your FirstCare Plus insurance quote is</string>
     <string-array name="cover_options">
         <item>Myself</item>
@@ -18,13 +29,25 @@
         <item>Myself and my Family</item>
         <item>My Children</item>
     </string-array>
+
+
+    <string-array name="summary_options">
+        <item>Annually</item>
+        <item>Monthly</item>
+    </string-array>
+
+
     <string name="rb_cover_options_1">Myself</string>
     <string name="rb_cover_options_2">Myself and my spouse / partner</string>
-    <string name="rb_cover_options_3">Myself and my Family</string>
-    <string name="rb_cover_options_4">My Children</string>
+    <string name="rb_cover_options_3">Myself and my family</string>
+    <string name="rb_cover_options_4">My children</string>
+    <string name="rb_cover_options_5">My children</string>
 
-    <string-array name="breakdown_options">
-        <item>Monthly</item>
-        <item>Yearly</item>
-    </string-array>
+    <string name="rb_plan_options_1">Basic Plan ( HKD 206.00 )</string>
+    <string name="rb_plan_options_2">Saver Plan ( HKD 296.00 )</string>
+    <string name="rb_plan_options_3">Standard Plan ( HKD 394.00 )</string>
+    <string name="rb_plan_options_4">Enhanced Plan ( HKD 668.00 )</string>
+    <string name="rb_plan_options_5">Top Plan ( HKD 1,312.00 )</string>
+
+
 </resources>

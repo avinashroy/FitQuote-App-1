@@ -61,6 +61,7 @@ public class StartWizardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // checking for last page
                 // if last page home screen will be launched
+                Log.d(TAG, "btnNext.onClick: " + viewPager.getCurrentItem());
                 int current = getItem(+1);
                 if (current < layouts.length) {
                     // move to next screen
@@ -117,12 +118,12 @@ public class StartWizardActivity extends AppCompatActivity {
             dots[i] = new TextView(this, null, 0, R.style.FitQuoteDotShadow);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.primaryTextColor));
+            dots[i].setTextColor(getResources().getColor(R.color.secondaryColor));
             dotsLayout.addView(dots[i]);
         }
 
         if (dots.length > 0)
-            dots[currentPage].setTextColor(getResources().getColor(R.color.secondaryColor));
+            dots[currentPage].setTextColor(getResources().getColor(R.color.primaryTextColor));
     }
 
     private int getItem(int i) {

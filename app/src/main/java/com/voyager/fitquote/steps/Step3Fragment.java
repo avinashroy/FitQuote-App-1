@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -44,15 +45,23 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
     final String TAG = "Step3Fragment";
     final int GOOGLE_FIT_PERMISSIONS_REQUEST_CODE = System.identityHashCode(this) & 0xFFFF;
     View view;
+    AppCompatButton googleFitBtn;
+
 
     private int totalSteps = 0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         view = inflater.inflate(R.layout.activity_wizard_screen_3, container, false);
         //initialize your UI
 
-        Button googleFitButton = (Button) view.findViewById(R.id.google_fit_btn);
-        googleFitButton.setOnClickListener(this);
+        googleFitBtn = (AppCompatButton) view.findViewById(R.id.google_fit_btn);
+        googleFitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Google fit button clicked", Snackbar.LENGTH_LONG).show();
+            }
+        });
 
         return view;
     }
@@ -75,6 +84,7 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        Log.d(TAG, "onClick: google fitbutton clicked");
         FitnessOptions fitnessOptions = FitnessOptions.builder()
                 .addDataType(DataType.TYPE_STEP_COUNT_DELTA, FitnessOptions.ACCESS_READ)
                 .addDataType(DataType.AGGREGATE_STEP_COUNT_DELTA, FitnessOptions.ACCESS_READ)

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <!--<androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/wizard_screen_3_header"
@@ -16,6 +16,17 @@
         android:gravity="fill_vertical"
         android:padding="@dimen/cell_padding"
         android:layout_marginBottom="@dimen/cell_padding"
+        />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wizard_screen_3_header"
+        android:background="@color/secondaryColor"
+        android:textSize="22dp"
+        android:textColor="@color/primaryTextColor"
+        android:gravity="fill_vertical"
+        android:padding="18dp"
         />
 
     <TableLayout
@@ -26,11 +37,12 @@
 
         <TableRow
             style="@style/priceTableRowTop"
-            android:background="@color/red">
+            android:background="@color/primaryTextColor">
 
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/midTableHeader"
                 android:text="@string/ws3_heading"
+                android:textColor="@color/secondaryColor"
                 android:layout_weight="1"
                 android:layout_span="2"
                 />
@@ -52,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/normal_font_size"
-                    android:text="Yearly" />
+                    android:text="Annually" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,10 +88,11 @@
             style="@style/priceTableRow">
             <TextView
                 style="@style/midTableHeader"
-                android:background="@color/red"
+                android:background="@color/primaryColor"
                 android:layout_weight="1"
                 android:layout_span="2"
-                android:text="Discounts" />
+                android:text="Discounts"
+                android:textColor="@color/secondaryColor"/>
 
         </TableRow>
         <TableRow
@@ -108,11 +121,12 @@
         </TableRow>
         <TableRow
             style="@style/priceTableRow"
-            android:background="@color/colorPrimary">
+            android:background="@color/primaryColor">
             <TextView
                 style="@style/midTableHeader"
                 android:layout_weight="1"
-                android:text="Total" />
+                android:text="Total"
+                android:textColor="@color/secondaryColor"/>
 
             <TextView
                 style="@style/midTableHeader"
