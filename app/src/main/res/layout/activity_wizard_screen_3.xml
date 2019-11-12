@@ -85,10 +85,10 @@
                 android:text="HKD 299.00" />
         </TableRow>
         <TableRow
-            style="@style/priceTableRow">
+            style="@style/priceTableRow"
+            android:background="@color/primaryTextColor">
             <TextView
                 style="@style/midTableHeader"
-                android:background="@color/primaryColor"
                 android:layout_weight="1"
                 android:layout_span="2"
                 android:text="Discounts"
@@ -105,7 +105,7 @@
             <TextView
                 style="@style/priceTableTextBlack"
                 android:layout_weight="1"
-                android:text="HKD 0.00" />
+                android:text="x% DISCOUNT" />
         </TableRow>
         <TableRow
             style="@style/priceTableRow">
@@ -117,30 +117,32 @@
             <TextView
                 style="@style/priceTableTextBlack"
                 android:layout_weight="1"
-                android:text="HKD 0.00" />
+                android:text="Active" />
         </TableRow>
         <TableRow
             style="@style/priceTableRow"
-            android:background="@color/primaryColor">
+            android:background="@color/primaryTextColor">
             <TextView
                 style="@style/midTableHeader"
                 android:layout_weight="1"
-                android:text="Total"
+                android:text="Total Premium"
                 android:textColor="@color/secondaryColor"/>
 
             <TextView
                 style="@style/midTableHeader"
                 android:layout_weight="1"
-                android:text="HKD 299.00" />
+                android:text="HKD 269.00"
+                android:textColor="@color/secondaryColor"/>
         </TableRow>
+
         <TableRow>
             android:layout_marginTop="30dp">
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/ws3_redeem_btn"
-                    style="@style/bigButton"
-                    android:text="Redeem Promo Code"
-                    android:drawableLeft="@drawable/gift_32"
-                    android:background="@color/red" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ws3_redeem_btn"
+                style="@style/bigButton"
+                android:text="Redeem Promo Code"
+                android:drawableLeft="@drawable/gift_32"
+                android:background="@color/red" />
         </TableRow>
         <TableRow>
             <com.google.android.material.button.MaterialButton
