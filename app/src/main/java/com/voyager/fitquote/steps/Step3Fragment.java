@@ -3,11 +3,14 @@ package com.voyager.fitquote.steps;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
@@ -32,11 +35,17 @@ import com.google.android.material.snackbar.Snackbar;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
 import com.voyager.fitquote.R;
+import com.voyager.fitquote.model.SingletonDataHolder;
+import com.voyager.fitquote.task.Step2AsyncTask;
+import com.voyager.fitquote.task.Step3AsyncTask;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import static java.text.DateFormat.getTimeInstance;
@@ -47,6 +56,13 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
     final int GOOGLE_FIT_PERMISSIONS_REQUEST_CODE = System.identityHashCode(this) & 0xFFFF;
     View view;
     MaterialButton googleFitBtn;
+
+    TextView tvAge;
+    TextView tvSteps;
+    TextView tvStatus;
+    TextView tvDiscount;
+    TextView tvFinalAmount;
+
 
 
     private int totalSteps = 0;
@@ -59,7 +75,22 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
         googleFitBtn = (MaterialButton) view.findViewById(R.id.google_fit_btn);
         googleFitBtn.setOnClickListener(this);
 
+
+
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        tvAge = (TextView) view.findViewById(R.id.tv_s3_age);
+        tvSteps = (TextView) view.findViewById(R.id.tv_s3_steps);
+        tvStatus = (TextView) view.findViewById(R.id.tv_s3_status);
+        tvDiscount = (TextView) view.findViewById(R.id.tv_s3_discount);
+        tvFinalAmount = (TextView) view.findViewById(R.id.tv_s3_finalAmt);
+
+        tvAge.setText(SingletonDataHolder.getInstance().getAge());
+        tvFinalAmount.setText(SingletonDataHolder.getInstance().getSelectedQuotation().getQuotationAmount());
     }
 
     @Override
@@ -130,7 +161,46 @@ public class Step3Fragment extends Fragment implements Step, View.OnClickListene
                     @Override
                     public void onSuccess(DataReadResponse dataReadResponse) {
                         aggregateData(dataReadResponse);
-                        Snackbar.make(view, "Total Steps : " + totalSteps, Snackbar.LENGTH_LONG).show();
+//                        Snackbar.make(view, "Total Steps : " + totalSteps, Snackbar.LENGTH_LONG).show();
+                        Log.d(TAG, "onSuccess: totalSteps : "  + totalSteps);
+                        // fixing bug in lambda
+                        Step3Fragment.this.tvSteps.setText(totalSteps + "");
+                        SingletonDataHolder.getInstance().setTotalSteps(totalSteps + "");
+
+                        // customer id generation TPDO - get customer id from google
+                        Random random = new Random();
+                        SingletonDataHolder.getInstance().setCustomerId(String.format("%04d", random.nextInt(10000)));
+
+                        // Call AWS Lambda
+                        Runnable r = () -> {
+                            Step3AsyncTask task = new Step3AsyncTask();
+                            try {
+                                task.execute(Step3Fragment.this).get();
+
+                                Handler handler = new Handler(Looper.getMainLooper());
+                                handler.post(() -> {
+                                    Log.d(TAG, "onSuccess: quotation " + SingletonDataHolder.getInstance().getSelectedQuotation());
+                                    Log.d(TAG, "onSuccess: discount amount " + SingletonDataHolder.getInstance().getDiscount());
+                                    double discountAmount = (Double.parseDouble(SingletonDataHolder.getInstance().getDiscount()) / 100) *
+                                            Double.parseDouble(SingletonDataHolder.getInstance().getSelectedQuotation().getQuotationAmount());
+
+                                    DecimalFormat df = new DecimalFormat("0.00");
+                                    String discountAmountStr = df.format(discountAmount);
+
+                                    tvDiscount.setText(SingletonDataHolder.getInstance().getDiscount() + " % = HKD " + discountAmountStr);
+                                    tvStatus.setText(SingletonDataHolder.getInstance().getLifestyle());
+                                    tvFinalAmount.setText("HKD " + (Double.parseDouble(SingletonDataHolder.getInstance().getSelectedQuotation().getQuotationAmount()) - discountAmount));
+                                });
+
+                            } catch (ExecutionException e) {
+                                e.printStackTrace();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        };
+
+                        new Thread(r).start();
+
                         totalSteps = 0;
                         Log.d("GSI", "onSuccess()");
                     }

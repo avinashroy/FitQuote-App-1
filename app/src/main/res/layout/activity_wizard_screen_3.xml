@@ -59,17 +59,22 @@
             <RadioGroup
                 android:orientation="horizontal"
                 android:layout_weight="1"
+                android:checkedButton="@id/rb_brk_monthly"
                 >
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/rb_brk_anually"
+                    android:clickable="false"
                     android:textSize="@dimen/normal_font_size"
                     android:text="Annually" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/rb_brk_monthly"
                     android:textSize="@dimen/normal_font_size"
-                    android:text="Monthly" />
+                    android:text="Monthly"
+                    />
             </RadioGroup>
         </TableRow>
         <TableRow
@@ -77,10 +82,11 @@
             <TextView
                 style="@style/priceTableTextBlack"
                 android:layout_weight="1"
-                android:text="My Details" />
+                android:text="Age" />
 
             <TextView
                 style="@style/priceTableTextBlack"
+                android:id="@+id/tv_s3_age"
                 android:layout_weight="1"
                 android:text="HKD 299.00" />
         </TableRow>
@@ -91,7 +97,7 @@
                 style="@style/midTableHeader"
                 android:layout_weight="1"
                 android:layout_span="2"
-                android:text="Discounts"
+                android:text="Promo Code"
                 android:textColor="@color/secondaryColor"/>
 
         </TableRow>
@@ -100,24 +106,12 @@
             <TextView
                 style="@style/priceTableTextBlack"
                 android:layout_weight="1"
-                android:text="Promo Code" />
+                android:text="DUMMY0" />
 
             <TextView
                 style="@style/priceTableTextBlack"
                 android:layout_weight="1"
-                android:text="x% DISCOUNT" />
-        </TableRow>
-        <TableRow
-            style="@style/priceTableRow">
-            <TextView
-                style="@style/priceTableTextBlack"
-                android:layout_weight="1"
-                android:text="Fit Report" />
-
-            <TextView
-                style="@style/priceTableTextBlack"
-                android:layout_weight="1"
-                android:text="Active" />
+                android:text="0% Discount" />
         </TableRow>
         <TableRow
             style="@style/priceTableRow"
@@ -125,11 +119,62 @@
             <TextView
                 style="@style/midTableHeader"
                 android:layout_weight="1"
-                android:text="Total Premium"
+                android:layout_span="2"
+                android:text="Fitness Report"
+                android:textColor="@color/secondaryColor"/>
+
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="Steps" />
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:id="@+id/tv_s3_steps"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="Lifestyle" />
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:id="@+id/tv_s3_status"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow">
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:layout_weight="1"
+                android:text="Discount" />
+
+            <TextView
+                style="@style/priceTableTextBlack"
+                android:id="@+id/tv_s3_discount"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow
+            style="@style/priceTableRow"
+            android:background="@color/primaryTextColor">
+            <TextView
+                style="@style/midTableHeader"
+                android:layout_weight="1"
+                android:text="Final Premium"
                 android:textColor="@color/secondaryColor"/>
 
             <TextView
                 style="@style/midTableHeader"
+                android:id="@+id/tv_s3_finalAmt"
                 android:layout_weight="1"
                 android:text="HKD 269.00"
                 android:textColor="@color/secondaryColor"/>

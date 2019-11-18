@@ -17,6 +17,7 @@ import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
 import com.voyager.fitquote.R;
 import com.voyager.fitquote.common.LoadingDialog;
+import com.voyager.fitquote.model.SingletonDataHolder;
 import com.voyager.fitquote.task.Step1AsyncTask;
 
 import java.util.concurrent.ExecutionException;
@@ -58,8 +59,9 @@ public class Step1Fragment extends Fragment implements Step {
             Step1AsyncTask startApplicationTask = new Step1AsyncTask();
             try {
                 String applicationNo = startApplicationTask.execute(this).get();
-            //Snackbar.make(view, applicationNo, Snackbar.LENGTH_LONG).show();
                 Log.d("s1", applicationNo);
+                SingletonDataHolder dataHolder = SingletonDataHolder.getInstance();
+                dataHolder.setApplicationNo(applicationNo);
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
