@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Age in years"
+                android:hint="Age in years (18 to 80)"
                 android:inputType="number"
                 android:maxLines="1"
                 android:maxLength="2"

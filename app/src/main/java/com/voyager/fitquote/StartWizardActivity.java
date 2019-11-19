@@ -87,8 +87,12 @@ public class StartWizardActivity extends AppCompatActivity {
                     if (current == 1) {
                         tiAge = (TextInputEditText) findViewById(R.id.age_text_edit);
                         Log.d(TAG, "onClick: value inthe textbox is " + tiAge.getText().toString());
-                        if(tiAge.getText() == null && tiAge.getText().toString().equals("")) {
+                        /*if(tiAge.getText().toString() == null && tiAge.getText().toString().equals("")) {*/
+                        if(tiAge.getText().toString().equals("")) {
                             Snackbar.make(v, "Please enter your age", Snackbar.LENGTH_LONG)
+                                    .show();
+                        } else if(Integer.parseInt(tiAge.getText().toString()) < 18  || Integer.parseInt(tiAge.getText().toString()) > 80) {
+                            Snackbar.make(v, "Please note, to apply you need to be aged between 18 to 80 years old", Snackbar.LENGTH_LONG)
                                     .show();
                         } else {
                             SingletonDataHolder.getInstance().setAge(tiAge.getText().toString());
@@ -111,7 +115,7 @@ public class StartWizardActivity extends AppCompatActivity {
                             viewPager.setCurrentItem(current);
                             addBottomDots(current);
                         } else {
-                            Snackbar.make(v, "Please choose a quotation to proceed", Snackbar.LENGTH_LONG)
+                            Snackbar.make(v, "Please choose a plan to proceed", Snackbar.LENGTH_LONG)
                                     .show();
                         }
 
